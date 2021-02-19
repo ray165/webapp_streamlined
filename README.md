@@ -7,7 +7,7 @@
 ## General Info
 This browser based web application to streamline team projects in the work context and improve communication of progress.
 
-Raymond
+Raymond Forced git Conflict
 	
 ## Technologies
 Technologies used for this project:
