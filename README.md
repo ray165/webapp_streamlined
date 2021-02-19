@@ -9,6 +9,7 @@ This browser based web application to streamline team projects in the work conte
 
 Raymond
 Miguel
+Victor
 	
 ## Technologies
 Technologies used for this project:
