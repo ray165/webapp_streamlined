@@ -5,7 +5,9 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+This browser based web application to streamline team projects in the work context and improve communication of progress.
+
+Raymond
 	
 ## Technologies
 Technologies used for this project:
