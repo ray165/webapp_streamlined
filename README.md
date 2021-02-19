@@ -8,6 +8,7 @@
 This browser based web application to streamline team projects in the work context and improve communication of progress.
 
 Raymond
+Miguel
 	
 ## Technologies
 Technologies used for this project:
