@@ -2,84 +2,202 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+  <meta charset="utf-8" />
+  <title>My BCIT Project</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project" />
+  <meta name="author" content="BCIT" />
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/skeleton.css">
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/styles/skeleton.css" />
 
-    <!-- Optional styles and scripts of your own -->
-
-
+  <!-- Optional styles and scripts of your own -->
 </head>
 
 <body>
-
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-    <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Streamlined</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1 class="display-4">Hello, World!</h1>
+  <!-------------------------------------->
+  <!-- The following is HTML for layout -->
+  <!-------------------------------------->
+  <!-- Header Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Streamlined</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <nav class="navbar fixed-bottom navbar-light bg-warning text-center">
-        <div class="container-fluid">
-        <!--COPY AND PASTE THIS TO OTHERS, colors require an external style sheet--> 
-            <a class="navbar-brand" href="/main">
-                <img src="/images/homeBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="homeBtn">
-                <img src="/images/membersBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="members">
-                <img src="/images/createBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="create">
-                <img src="/images/projectsBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="projects">
-                <!-- <img src="/images/calendarBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="calendar">
-                -->
-            </a>
-          
+  <div class="container d-flex justify-content-center align-items-center">
+    <h1 class="display-4 d-flex align-items-center">
+      Project 1
+      <button type="button" class="btn btn-primary">Edit</button>
+    </h1>
+  </div>
+
+  <!-- ************************* -->
+  <!-- TASK LIST -->
+  <!-- ************************* -->
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card float-end" style="width: 18rem">
+      <!-- <img src="..." class="card-img-top" alt="..." /> -->
+      <div class="card-body">
+        <h5 class="card-title">Tasks</h5>
+        <!-- <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p> -->
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Task One
+          <div class="form-check float-end">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              <!-- Task One Checkbox text -->
+            </label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          Task Two
+          <div class="form-check float-end">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              <!-- Task One Checkbox text -->
+            </label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          Task Three
+          <div class="form-check float-end">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              <!-- Task One Checkbox text -->
+            </label>
+          </div>
+        </li>
+      </ul>
+      <div class="card-body">
+        <button type="button" class="btn btn-secondary btn-sm float-end">Add Task</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ************************* -->
+  <!-- Add Notes -->
+  <!-- ************************* -->
+  <div class="input-group input-group-lg">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Add Notes</span>
+    <input type="text" class="form-control" aria-label="Notes input box" aria-describedby="inputGroup-sizing-lg">
+    <button type="button" class="btn btn-secondary btn-sm float-end">Save</button>
+    <button type="button" class="btn btn-danger btn-sm float-end">Cancel</button>
+  </div>
+
+
+  <!-- ************************* -->
+  <!-- Comments, Notes and History LIST -->
+  <!-- ************************* -->
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card float-end" style="width: 18rem">
+      <!-- <img src="..." class="card-img-top" alt="..." /> -->
+      <div class="card-body">
+        <h5 class="card-title">Comments</h5>
+        <!-- <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p> -->
+      </div>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              March 1, 2021 Ray (2 days ago)
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Some text from your team goes here!</strong> Hello World
+            </div>
+          </div>
         </div>
-      </nav>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Feb 1, 2021 Miguel
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Some text from your team goes here!</strong> Hello World
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Jan 1, 2021 Victor
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Some text from your team goes here!</strong> Hello World
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+    </div>
+  </div>
 
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
+  <nav class="navbar fixed-bottom navbar-light bg-warning text-center">
+    <div class="container-fluid">
+      <!--COPY AND PASTE THIS TO OTHERS, colors require an external style sheet-->
+      <a class="navbar-brand" href="/main">
+        <img src="/images/homeBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="homeBtn" />
+        <img src="/images/membersBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="members" />
+        <img src="/images/createBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="create" />
+        <img src="/images/projectsBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="projects" />
+        <!-- <img src="/images/calendarBtn.png" width="10%" height="10%" class="d-inline-block align-top" alt="calendar">
+                -->
+      </a>
+    </div>
+  </nav>
 
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
 </body>
 
 </html>
