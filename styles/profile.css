@@ -1,0 +1,12 @@
+#info {
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid;
+    border-bottom-color: gray;
+    margin-bottom: 20px;
+}
+
+#teams {
+    text-align: center;
+}
