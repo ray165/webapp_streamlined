@@ -1,1 +1,11 @@
 /* Insert css styling for header and banners and other shared styling */
+
+.navbar-brand{
+    margin-right: 0;
+    /* width: 10%; */
+    padding: 0;
+}
+
+.centeredBotNav{
+    width: 50px;
+}
