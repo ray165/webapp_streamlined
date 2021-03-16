@@ -1,0 +1,13 @@
+#hero {
+    /* height: 10vh; */
+    /* width: 30vw; */
+    margin:  auto auto;
+    margin-top: 30vh;
+    /* height: 30vh; */
+
+}
+
+body {
+    /* background-image: url("/images/man\ relaxed.jpg"); */
+    background-size: contain;
+}
