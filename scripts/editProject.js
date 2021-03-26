@@ -1,5 +1,5 @@
 // Here lies client side JS 
-// THIS IS FOR FIRST CREATION.
+// This code here should set the name of whatever the project its refering to is 
 getProjectEdit();
 
 // Grab all values when 'save' is clicked!
