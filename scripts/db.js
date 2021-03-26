@@ -12,7 +12,7 @@ function getProjectEdit() {
         var pProgress = document.getElementById("pProgress").value
 
         console.log(pName, pDescription, pDueDate, pPriority, pProgress)     
-        writeProjectEdit();
+        writeProjectEdit(pName, pDescription, pDueDate, pPriority, pProgress);
         alert("it worked!");
         
     })
@@ -23,7 +23,7 @@ function writeProjectEdit(pName, pDescription, pDueDate, pPriority, pProgress){
     var projects = db.collection("projects")
     console.log(projects);
     projects.add({
-        // dueDate: pDueDate,
+        dueDate: pDueDate,
         name: pName, 
         description: pDescription,
         priority: pPriority,
