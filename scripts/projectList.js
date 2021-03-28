@@ -22,6 +22,7 @@ db.collection("projects").get().then((querySnapshot) => {
         btn.id = doc.id
         btn.className = "btn btn-primary btn-sm"
         btn.innerHTML = "Edit Project!"
+        btn.setAttribute("href", "projectEdit.html")
 
         progContainer.className = "progress"
         progBar.className = "progress-bar bg-info"
@@ -48,15 +49,13 @@ db.collection("projects").get().then((querySnapshot) => {
 });
 
 
+// When you click on the btn, it will send you to projectEdit.html
+// And, it will temporarily store the ID of the button (which is the project ID)
+// We need this so that we know which project we're editing
+function sendClickedID(projID) {
+    document.getElementById(projID).addEventListener('click', function() {
 
-
-{/* <div class="container">
-<div class="row">
-    <div class="col-sm-8">Project 1</div>
-    <div class="col-sm-4"><a type="button" class="btn btn-primary btn-sm">Edit Project</a></div>
-</div>
-<div class="progress">
-    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-        aria-valuemax="100">50%</div>
-</div>
-</div> */}
+        alert("it worked!");
+        
+    })
+}
