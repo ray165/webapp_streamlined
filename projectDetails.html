@@ -97,7 +97,34 @@
         </li>
       </ul>
       <div class="card-body">
-        <button type="button" class="btn btn-secondary btn-sm float-end">Add Task</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          data-bs-whatever="@mdo">Add Tasks</button>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="/" method="POST">
+                <div class="mb-3">
+                  <label for="tName" class="col-form-label">Task Name:</label>
+                  <input type="text" class="form-control" id="tName">
+                </div>
+                <div class="mb-3">
+                  <label for="tDescription" class="col-form-label" id="inputGroup-sizing-default">Description:</label>
+                  <textarea class="form-control" id="tDescription"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a type="button" class="btn btn-primary" id="save">Save</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -107,7 +134,8 @@
   <!-- ************************* -->
   <div class="input-group input-group-lg">
     <span class="input-group-text" id="inputGroup-sizing-lg">Add Notes</span>
-    <input type="text" class="form-control" aria-label="Notes input box" id="newNote" aria-describedby="inputGroup-sizing-lg">
+    <input type="text" class="form-control" aria-label="Notes input box" id="newNote"
+      aria-describedby="inputGroup-sizing-lg">
     <button type="button" class="btn btn-secondary btn-sm float-end" id="save">Save</button>
     <button type="button" class="btn btn-danger btn-sm float-end">Cancel</button>
   </div>
@@ -179,20 +207,20 @@
   <!-- ***************************** -->
   <nav class="navbar fixed-bottom navbar-light bg-info" id="botNav">
     <div class="gridNavContainer">
-        <a class="d-inline navbar-brand " href="main.html">
-            <img src="/images/homeBtn.png" class="d-inline-block align-top navPic" alt="homeBtn">
-        </a>
-        <a class="d-inline navbar-brand " href="members.html">
-            <img src="/images/membersBtn.png"  class="d-inline-block align-top navPic" alt="members">
-        </a>
-        <a class="d-inline navbar-brand " href="create.html">
-            <img src="/images/createBtn.png"  class="d-inline-block align-top navPic" alt="create">
-        </a>
-        <a class="d-inline navbar-brand " href="projects.html">
-            <img src="/images/projectsBtn.png"  class="d-inline-block align-top navPic" alt="projects">
-        </a>
+      <a class="d-inline navbar-brand " href="main.html">
+        <img src="/images/homeBtn.png" class="d-inline-block align-top navPic" alt="homeBtn">
+      </a>
+      <a class="d-inline navbar-brand " href="members.html">
+        <img src="/images/membersBtn.png" class="d-inline-block align-top navPic" alt="members">
+      </a>
+      <a class="d-inline navbar-brand " href="create.html">
+        <img src="/images/createBtn.png" class="d-inline-block align-top navPic" alt="create">
+      </a>
+      <a class="d-inline navbar-brand " href="projects.html">
+        <img src="/images/projectsBtn.png" class="d-inline-block align-top navPic" alt="projects">
+      </a>
     </div>
-</nav>
+  </nav>
 
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
@@ -201,9 +229,21 @@
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
 
+  <!-- Setup for firebase! -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+  <!-- API Keys!     -->
+  <script src="scripts/firebase_api.js"></script>
+
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
+  <script src="/scripts/editTask.js" type="text/javascript" charset="UTF-8">
+  </script>
+
   <script src="/scripts/projectDetails.js" type="text/javascript" charset="UTF-8"></script>
 
 </body>
