@@ -10,6 +10,7 @@ db.collection("projects").get().then((querySnapshot) => {
         var btnContainer = document.createElement("div");
         var progContainer = document.createElement("div"); 
         var progBar = document.createElement("div");
+<<<<<<< HEAD
         container.className = "container"
         // var row =  document.createElement("div")
         row.className = "row"
@@ -31,6 +32,29 @@ db.collection("projects").get().then((querySnapshot) => {
         progBar.setAttribute("aria-valuenow", "50%")
         progBar.setAttribute("aria-valuemin", 0)
         progBar.setAttribute("aria-valuemax","100")
+=======
+        container.className = "container";
+        row.className = "row";
+        projectName.className = "col-sm-8";
+        projectName.innerHTML = doc.data().name;
+
+        btnContainer.className = "col-sm-4";
+        var btn = document.createElement("a");
+        btn.setAttribute("type", "button");
+        btn.className = "btn btn-primary btn-sm";
+        var link = "projectEdit.html?uid=" + doc.id;
+        btn.setAttribute("href", link);
+
+        btn.innerHTML = "Edit Project!";
+
+        progContainer.className = "progress";
+        progBar.className = "progress-bar bg-info";
+        progBar.setAttribute("role", "progressbar");
+        progBar.setAttribute("style", "width: 50%");
+        progBar.setAttribute("aria-valuenow", "50%");
+        progBar.setAttribute("aria-valuemin", 0);
+        progBar.setAttribute("aria-valuemax","100");
+>>>>>>> a24f756d2821402d29559d28a8805e3b73297d3f
 
         // Instead of progress %, set it as the number of tasks completed count(n)
         // progBar.innerHTML("NOT IMPLEMENTED YET")
