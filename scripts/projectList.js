@@ -1,15 +1,20 @@
 db.collection("projects").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data(), "testing:", doc.data().pName);
+        console.log(doc.id, " => ", doc.data(), "testing:", doc.data().name);
 
 
-        var container, row, projectName, btnContainer, progContainer, progBar = document.createElement("div")
+        var container = document.createElement("div");
+        var row = document.createElement("div");
+        var projectName = document.createElement("div");
+        var btnContainer = document.createElement("div");
+        var progContainer = document.createElement("div"); 
+        var progBar = document.createElement("div");
         container.className = "container"
         // var row =  document.createElement("div")
         row.className = "row"
         projectName.className = "col-sm-8"
-        projectName.innerHTML = doc.data().pName
+        projectName.innerHTML = doc.data().name
 
         btnContainer.className = "col-sm-4"
         var btn = document.createElement("a")
@@ -27,7 +32,8 @@ db.collection("projects").get().then((querySnapshot) => {
         progBar.setAttribute("aria-valuemax","100")
 
         // Instead of progress %, set it as the number of tasks completed count(n)
-        progBar.innerHTML("NOT IMPLEMENTED YET")
+        // progBar.innerHTML("NOT IMPLEMENTED YET")
+
 
 
 
@@ -36,7 +42,7 @@ db.collection("projects").get().then((querySnapshot) => {
         container.append(row, progContainer)
         row.append(projectName, btnContainer)
         btnContainer.append(btn);
-        var myRoot = document.getElementById('root').append(container);
+        document.getElementById('root').append(container);
 
     });
 });
