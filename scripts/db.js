@@ -4,29 +4,30 @@ getProjectEdit();
 
 // Grab all values when 'save' is clicked!
 function getProjectEdit() {
-    document.getElementById("save").addEventListener('click', function() {
-        var pName = document.getElementById("pName").value 
+    document.getElementById("save").addEventListener('click', function () {
+        var pName = document.getElementById("pName").value
         var pDescription = document.getElementById("pDescription").value
         var pDueDate = document.getElementById("pDueDate").value
         var pPriority = document.getElementById("pPriority").value
         var pProgress = document.getElementById("pProgress").value
 
         var data = {
-            "dueDate": pDueDate, 
-            "pName":  pName,
+            "dueDate": pDueDate,
+            "pName": pName,
             "description": pDescription,
             "priority": pPriority,
-            "progress": pProgress}
+            "progress": pProgress
+        }
 
-        console.log(pName, pDescription, pDueDate, pPriority, pProgress)     
+        console.log(pName, pDescription, pDueDate, pPriority, pProgress)
         writeProjectEdit(data);
         console.log("data sent to db!");
-        
+
     })
 }
 
 // Now write this data into our db. 
-function writeProjectEdit(data){
+function writeProjectEdit(data) {
     var projects = db.collection("projects")
     console.log(projects);
     projects.add(data);
@@ -39,7 +40,7 @@ function writeProjectEdit(data){
             console.log(doc.id, " => ", doc.data(), "testing:", doc.data().pName);
         });
     });
-   
+
 }
 
 

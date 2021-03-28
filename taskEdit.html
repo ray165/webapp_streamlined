@@ -49,77 +49,78 @@
             </div>
         </div>
     </nav>
-
-    <div class="container">
-        <h1 class="display-4">Edit Task</h1>
-    </div>
-    </br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Enter Task Name:</span>
+    <form action="/" method="POST">
+        <div class="container">
+            <h1 class="display-4">Edit Task</h1>
+        </div>
+        </br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Enter Task Name:</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="tName">
                     </div>
-                    <input type="text" class="form-control" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
         </div>
-    </div>
 
-    </br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
+        </br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="tDescription">
                     </div>
-                    <input type="text" class="form-control" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
         </div>
-    </div>
 
-    </br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Due Date:</span>
+        </br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="d-inline-block">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Due Date</span>
+                        <input class="form-control" type="date" value="2011-08-19" id="tDueDate">
                     </div>
-                    <input type="text" class="form-control" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
         </div>
-    </div>
 
-    </br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Add Tags:</span>
+        </br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Add Tags:</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" id="tAddTag">
                     </div>
-                    <input type="text" class="form-control" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
-                </div>
+            <div>
+                <a type="button" class="btn btn-primary btn-lg" id="save">Save</a>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox">
+            <!-- <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                    </div>
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox">
+            </div> -->
         </div>
-    </div>
+    </form>
 
 
 
@@ -152,10 +153,19 @@
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
         </script>
 
+    <!-- Setup for firebase! -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+    <!-- API Keys!     -->
+    <script src="scripts/firebase_api.js"></script>
+
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-
+    <!-- <script src="/scripts/editTask.js" type="text/javascript" charset="UTF-8"></script> -->
 </body>
 
 </html>
