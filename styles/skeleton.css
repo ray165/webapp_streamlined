@@ -1,9 +1,11 @@
 /* Insert css styling for header and banners and other shared styling */
 
-.navbar-brand{
-    margin-right: 0;
-    /* width: 10%; */
-    padding: 0;
+.navPic {
+    width: 20%;
+    height: auto;
+    /* margin: auto auto; */
+    min-width: 40px;
+    /* margin-left: 1vw; */
 }
 
 .centeredBotNav{
@@ -12,4 +14,17 @@
 
 body {
     background-color: #90E0EF;
+}
+
+.gridNavContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items:  center;
+    justify-items: center;
+    margin: auto;
+}
+
+.gridNavContainer > a {
+    display: flex;
+    text-align: center;
 }
