@@ -1,5 +1,13 @@
 // Here lies client side JS 
 getProjectEdit();
+const url = new URLSearchParams(window.location.search);
+const projID = url.get("uid");
+console.log(projID);
+
+// Autofill the html values with what's in the database! 
+
+
+
 
 // Grab all values when 'save' is clicked!
 function getProjectEdit() {
@@ -21,7 +29,7 @@ function getProjectEdit() {
 function writeProjectEdit(pName, pDescription, pDueDate, pPriority, pProgress){
     var projects = db.collection("projects")
     console.log(projects);
-    projects.add({
+    projects.update({
         dueDate: pDueDate,
         name: pName, 
         description: pDescription,
