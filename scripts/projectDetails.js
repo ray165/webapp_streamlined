@@ -1,5 +1,4 @@
 // Here lies client side JS 
-alert('Working!')
 getNote();
 
 // Grab all values when 'save' is clicked!

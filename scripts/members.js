@@ -1,8 +1,6 @@
-console.log("Test!");
 db.collection("users").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data(), "testing:", doc.data().name);
 
         var col = document.createElement("div");
         var card = document.createElement("div");

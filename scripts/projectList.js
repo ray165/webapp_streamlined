@@ -1,8 +1,6 @@
 db.collection("projects").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data(), "testing:", doc.data().name);
-
 
         var container = document.createElement("div");
         var row = document.createElement("div");
