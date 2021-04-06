@@ -5,7 +5,8 @@ db.collection("projects").get().then((querySnapshot) => {
         var container = document.createElement("div");
         var row = document.createElement("div");
         var projectName = document.createElement("div");
-        var btnContainer = document.createElement("div");
+        var dtlContainer = document.createElement("div");
+        var editContainer = document.createElement("div");
         var progContainer = document.createElement("div"); 
         var progBar = document.createElement("div");
         container.className = "container";
@@ -13,14 +14,23 @@ db.collection("projects").get().then((querySnapshot) => {
         projectName.className = "col-sm-8";
         projectName.innerHTML = doc.data().name;
 
-        btnContainer.className = "col-sm-4";
-        var btn = document.createElement("a");
-        btn.setAttribute("type", "button");
-        btn.className = "btn btn-primary btn-sm";
-        var link = "projectEdit.html?uid=" + doc.id;
-        btn.setAttribute("href", link);
+        dtlContainer.className = "col-sm-4";
+        var dtlbtn = document.createElement("a");
+        dtlbtn.setAttribute("type", "button");
+        dtlbtn.className = "btn btn-primary btn-sm";
+        var link = "projectDetails.html?uid=" + doc.id;
+        dtlbtn.setAttribute("href", link);
 
-        btn.innerHTML = "Edit Project!";
+        dtlbtn.innerHTML = "Project Details";
+
+        editContainer.className = "col-sm-4";
+        var editbtn = document.createElement("a");
+        editbtn.setAttribute("type", "button");
+        editbtn.className = "btn btn-primary btn-sm";
+        var link = "projectEdit.html?uid=" + doc.id;
+        editbtn.setAttribute("href", link);
+
+        editbtn.innerHTML = "Edit Project";
 
         progContainer.className = "progress";
         progBar.className = "progress-bar bg-info";
@@ -39,8 +49,9 @@ db.collection("projects").get().then((querySnapshot) => {
         // var projectName = document.createElement("div")
         progContainer.append(progBar)
         container.append(row, progContainer)
-        row.append(projectName, btnContainer)
-        btnContainer.append(btn);
+        row.append(projectName, dtlContainer, editContainer)
+        dtlContainer.append(dtlbtn);
+        editContainer.append(editbtn);
         document.getElementById('root').append(container);
 
     });
