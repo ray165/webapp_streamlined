@@ -14,6 +14,12 @@ function getTaskEdit() {
         writeTaskEdit(data);
         console.log("data sent to database");
 
+        var task = document.createElement('li');
+        task.className = 'list-group-item';
+        console.log("createy")
+
+
+
     })
 }
 
