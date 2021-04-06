@@ -25,6 +25,9 @@ Content of the project folder:
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
+├── main.html                # home page
+├── create.html              # page that hosts the creation links to projects
+├── firstCreation.html       # page on which projects are created then added to the database
 └── README.md
 
 It has the following subfolders and files:
