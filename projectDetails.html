@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>My BCIT Project</title>
+  <title>Streamlined</title>
   <meta name="comp1800 boilerplate code" content="my bcit project" />
   <meta name="author" content="BCIT" />
 
@@ -108,7 +108,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form action="/" method="POST">
+              <form id="form" action="/" method="POST">
                 <div class="mb-3">
                   <label for="tName" class="col-form-label">Task Name:</label>
                   <input type="text" class="form-control" id="tName">
@@ -121,7 +121,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <a type="button" class="btn btn-primary" id="save">Save</a>
+              <a type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save">Save</a>
             </div>
           </div>
         </div>
@@ -132,12 +132,14 @@
   <!-- ************************* -->
   <!-- Add Notes -->
   <!-- ************************* -->
-  <div class="input-group input-group-lg">
-    <span class="input-group-text" id="inputGroup-sizing-lg">Add Notes</span>
-    <input type="text" class="form-control" aria-label="Notes input box" id="newNote"
-      aria-describedby="inputGroup-sizing-lg">
-    <button type="button" class="btn btn-secondary btn-sm float-end" id="save">Save</button>
-    <button type="button" class="btn btn-danger btn-sm float-end">Cancel</button>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="input-group input-group-lg" style="width: 18rem;">
+      <span class="input-group-text" id="inputGroup-sizing-lg">Add Notes</span>
+      <input type="text" class="form-control" aria-label="Notes input box" id="newNote"
+        aria-describedby="inputGroup-sizing-lg">
+      <button type="button" class="btn btn-secondary btn-sm float-end" id="save">Save</button>
+      <!-- <button type="button" class="btn btn-danger btn-sm float-end">Cancel</button> -->
+    </div>
   </div>
 
 
