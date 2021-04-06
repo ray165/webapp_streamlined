@@ -1,4 +1,4 @@
-db.collection("projects").get().then((querySnapshot) => {
+db.collection("projects").orderBy("dueDate", "asc").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
 
