@@ -5,8 +5,8 @@ db.collection("projects").orderBy("dueDate", "asc").get().then((querySnapshot) =
         var container = document.createElement("div");
         var row = document.createElement("div");
         var projectName = document.createElement("div");
-        var dtlContainer = document.createElement("div");
-        var editContainer = document.createElement("div");
+        // var dtlContainer = document.createElement("div");
+        // var editContainer = document.createElement("div");
         var progContainer = document.createElement("div"); 
         var progBar = document.createElement("div");
         container.className = "container";
@@ -14,7 +14,7 @@ db.collection("projects").orderBy("dueDate", "asc").get().then((querySnapshot) =
         projectName.className = "col-sm-8";
         projectName.innerHTML = doc.data().name;
 
-        dtlContainer.className = "col-sm-4";
+        // dtlContainer.className = "";
         var dtlbtn = document.createElement("a");
         dtlbtn.setAttribute("type", "button");
         dtlbtn.className = "btn btn-primary btn-sm";
@@ -23,10 +23,10 @@ db.collection("projects").orderBy("dueDate", "asc").get().then((querySnapshot) =
 
         dtlbtn.innerHTML = "Project Details";
 
-        editContainer.className = "col-sm-4";
+        // editContainer.className = "";
         var editbtn = document.createElement("a");
         editbtn.setAttribute("type", "button");
-        editbtn.className = "btn btn-primary btn-sm";
+        editbtn.className = "btn btn-success btn-sm";
         var link = "projectEdit.html?uid=" + doc.id;
         editbtn.setAttribute("href", link);
 
@@ -43,15 +43,16 @@ db.collection("projects").orderBy("dueDate", "asc").get().then((querySnapshot) =
         // Instead of progress %, set it as the number of tasks completed count(n)
         // progBar.innerHTML("NOT IMPLEMENTED YET")
 
-
+        // grid to contain the buttons! "col-sm-4"
+        var gridContainer = document.createElement('div');
+        gridContainer.className = 'col-sm-4';
+        gridContainer.append(dtlbtn, editbtn);
 
 
         // var projectName = document.createElement("div")
         progContainer.append(progBar)
         container.append(row, progContainer)
-        row.append(projectName, dtlContainer, editContainer)
-        dtlContainer.append(dtlbtn);
-        editContainer.append(editbtn);
+        row.append(projectName, gridContainer)
         document.getElementById('root').append(container);
 
     });
