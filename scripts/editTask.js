@@ -1,4 +1,12 @@
+const url = new URLSearchParams(window.location.search);
+const projID = url.get("uid");
+console.log(projID);
+var docRef = db.collection("projects").doc(projID);
+
+
 getTaskEdit();
+
+
 
 function getTaskEdit() {
     document.getElementById("save").addEventListener('click', function () {
@@ -24,7 +32,8 @@ function getTaskEdit() {
 }
 
 function writeTaskEdit(data) {
-    var tasks = db.collection("tasks")
+    // Create a subcollection under the specified project 
+    var tasks = docRef.collection("tasks")
     console.log(tasks);
     tasks.add(data);
 
