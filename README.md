@@ -46,6 +46,7 @@ It has the following subfolders and files:
     /projectsBtn.png         # Clipboard button: bottom nav
 
 ├── scripts                  # Folder for scripts
+    /editComments.js         # used in projectDetails.html for comments specifically
     /editTask.js             # taskEdit.html
     /firebase_api.js         # how our app communicates with the database
     /firstCreation.js        # firstCreation.html
@@ -58,8 +59,11 @@ It has the following subfolders and files:
     /create.css              # create.html
     /login.css               # index.html
     /main.css                # main.html
+    /members.css             # members.html
     /profile.css             # profile.html
     /projectEdit.css         # projectEdit.html 
+    /projectDetails.css      # projectDetails.html
     /skeleton.css            # css template used by most pages
+
 
 ```
