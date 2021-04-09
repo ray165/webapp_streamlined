@@ -2,3 +2,21 @@
 .btn {
     margin-right: 3%;
 }
+
+.container {
+    margin-bottom: 15px;
+}
+
+.col-sm-5 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.col-sm-8 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#root {
+    margin-bottom: 15%;
+}

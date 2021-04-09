@@ -45,7 +45,7 @@ db.collection("projects").orderBy("dueDate", "asc").get().then((querySnapshot) =
 
         // grid to contain the buttons! "col-sm-4"
         var gridContainer = document.createElement('div');
-        gridContainer.className = 'col-sm-4';
+        gridContainer.className = 'col-sm-5';
         gridContainer.append(dtlbtn, editbtn);
 
 
