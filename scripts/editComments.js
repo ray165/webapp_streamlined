@@ -1,52 +1,98 @@
-const url = new URLSearchParams(window.location.search);
-const projID = url.get("uid");
+// These constants shared with all other js files opened by the html.
+// url and projID defined in taskEdit.js
+
+// const url = new URLSearchParams(window.location.search);
+// const projID = url.get("uid");
 console.log(projID);
 var docRef = db.collection("projects").doc(projID);
 var counter = 0;
 
-// Comments hasn't been created yet!
-docRef.collection("comments").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        // Type of doc.data() not defined yet! 
-        // doc.data().name 
-        // doc.data().time
-        // doc.data().comment
+setCommentsDB();
 
-        counter++; // increment to differentiate the accordions.
+function setCommentsDB() {
+  document
+    .getElementById("saveComments")
+    .addEventListener("click", function () {
+      var cName = document.getElementById("cName").value;
+      var cDescription = document.getElementById("cDescription").value;
+      // var cTimeStmap =
 
-        // the root node is 'accordion' div class which will be on the html. We'll append to that.
-        var item = document.createElement('div');
-        item.className = 'accordion-item';
-        var h2 = document.createElement('h2');
-        h2.className = 'accordion-header';
-        h2.id = "heading" + counter; // add the counter in to differentiate the accordions.
-        var button = document.createElement('button');
-        button.className = 'accordion-button';
-        button.setAttribute("type", "button");
-        button.setAttribute("data-bs-toggle", "collapse");
-        button.setAttribute("data-bs-target", "#collapse" + counter);
-        button.setAttribute("aria-expanded", "true");
-        button.setAttribute("aria-controls", "collapse" + counter);
-        // need the data.
-        button.innerHTML = doc.data().time + " " + doc.data().name;  // DOESNT EXIST YET
+      var data = {
+        cName: cName,
+        cDescription: cDescription,
+        cTimeStamp: firebase.firestore.Timestamp.fromDate(new Date()),
+      };
 
-        var collapse = document.createElement('div');
-        collapse.id = "collapse" + counter;
-        collapse.className = "accordion-collapse collapse show";
-        collapse.setAttribute("aria-labelledby", "heading" + counter);
-        collapse.setAttribute("data-bs-parent", "#accordionExample");
+      console.log(cName, cDescription);
+      writeCommentsEdit(data);
+      console.log("data sent to database");
 
-        var body = document.createElement("div");
-        body.className = "accordion-body";
-        div.innerHTML = doc.data().comment;  // text doesnt exist yet!!
-
-
-        // My appends
-        h2.append(button);
-        collapse.append(body);
-        item.append(h2, collapse);
+      // Refresh every time u click save again.
+      document.getElementById("cName").innerHTML = "";
+      document.getElementById("cDescription").innerHTML = "";
     });
-});
+}
 
+function writeCommentsEdit(data) {
+  // Create a subcollection under the specified project
+  var comments = docRef.collection("comments");
+  // console.log(tasks);
+  comments.add(data);
 
+  // test by pulling from db.
+  db.collection("comments")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data(), "testing:", doc.data().cName);
+      });
+    });
+}
+
+// Comments hasn't been created yet!
+docRef
+  .collection("comments")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      // Type of doc.data() not defined yet!
+      // doc.data().name
+      // doc.data().time
+      // doc.data().comment
+
+      counter++; // increment to differentiate the accordions.
+
+      // the root node is 'accordion' div class which will be on the html. We'll append to that.
+      var item = document.createElement("div");
+      item.className = "accordion-item";
+      var h2 = document.createElement("h2");
+      h2.className = "accordion-header";
+      h2.id = "heading" + counter; // add the counter in to differentiate the accordions.
+      var button = document.createElement("button");
+      button.className = "accordion-button";
+      button.setAttribute("type", "button");
+      button.setAttribute("data-bs-toggle", "collapse");
+      button.setAttribute("data-bs-target", "#collapse" + counter);
+      button.setAttribute("aria-expanded", "true");
+      button.setAttribute("aria-controls", "collapse" + counter);
+      // need the data.
+      button.innerHTML = doc.data().cTimeStamp.data().Date + " " + doc.data().cName; // DOESNT EXIST YET
+
+      var collapse = document.createElement("div");
+      collapse.id = "collapse" + counter;
+      collapse.className = "accordion-collapse collapse show";
+      collapse.setAttribute("aria-labelledby", "heading" + counter);
+      collapse.setAttribute("data-bs-parent", "#accordionExample");
+
+      var body = document.createElement("div");
+      body.className = "accordion-body";
+      body.innerHTML = doc.data().cDescription; // text doesnt exist yet!!
+
+      // My appends
+      h2.append(button);
+      collapse.append(body);
+      item.append(h2, collapse);
+      document.querySelector(".accordion").append(item);
+    });
+  });
