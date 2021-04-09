@@ -77,7 +77,14 @@ docRef
       button.setAttribute("aria-expanded", "true");
       button.setAttribute("aria-controls", "collapse" + counter);
       // need the data.
-      button.innerHTML = doc.data().cTimeStamp.data().Date + " " + doc.data().cName; // DOESNT EXIST YET
+      //   var myDate = new Date(doc.data().cTimeStamp.toDate());
+      var myDate = doc.data().cTimeStamp.toDate()
+      let date = myDate.getDate();
+      let month = myDate.getMonth(); // jan is 0, not 1.
+      let year = myDate.getFullYear();
+      var dateString = date + "/" + (month + 1) + "/" + year;
+      button.innerHTML =
+      doc.data().cTimeStamp.toDate() + "    " + "<strong>" + doc.data().cName + "</strong>"; // DOESNT EXIST YET
 
       var collapse = document.createElement("div");
       collapse.id = "collapse" + counter;
