@@ -12,7 +12,7 @@ db.collection("projects").orderBy("dueDate", "asc").get().then((querySnapshot) =
         container.className = "container";
         row.className = "row";
         projectName.className = "col-sm-8";
-        projectName.innerHTML = doc.data().name;
+        projectName.innerHTML = doc.data().pName;
 
         // dtlContainer.className = "";
         var dtlbtn = document.createElement("a");

@@ -1,6 +1,6 @@
 // Here lies client side JS 
-
-
+var link = "projectEdit.html?" + new URLSearchParams(window.location.search);
+document.getElementById("pDetailsEdit").setAttribute("href", link);
 
 getNote();
 

@@ -61,7 +61,7 @@ function getProjectEdit() {
 
         var data = {
             "dueDate": pDueDate, 
-            "name":  pName,
+            "pName":  pName,
             "description": pDescription,
             "priority": pPriority,
             "progress": pProgress}
