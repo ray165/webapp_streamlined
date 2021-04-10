@@ -25,7 +25,6 @@ Content of the project folder:
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 ├── main.html                # home page
-├── create.html              # page that hosts the creation links to projects
 ├── firstCreation.html       # page on which projects are created then added to the database
 ├── members.html             # list of members, pulled from database
 ├── profile.html             # user profile (not used)
@@ -56,7 +55,6 @@ It has the following subfolders and files:
     /projectList.js          # projects.html  
 
 ├── styles                   # Folder for styles
-    /create.css              # create.html
     /login.css               # index.html
     /main.css                # main.html
     /members.css             # members.html
