@@ -4,8 +4,27 @@
 // const url = new URLSearchParams(window.location.search);
 // const projID = url.get("uid");
 console.log(projID);
+
+
+
 var docRef = db.collection("projects").doc(projID);
 var counter = 0;
+
+// Change the project title.
+// I put this in editTask.js as its the first to execute.
+docRef.get().then((doc) => {
+  if (doc.exists) {
+      console.log("Document data:", doc.data());
+      document.getElementById("projectName").innerHTML = doc.data().name;
+  } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+  }
+}).catch((error) => {
+  console.log("Error getting document:", error);
+});
+
+
 
 setCommentsDB();
 
@@ -49,7 +68,7 @@ function writeCommentsEdit(data) {
     });
 }
 
-// Comments hasn't been created yet!
+
 docRef
   .collection("comments")
   .get()

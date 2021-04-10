@@ -1,4 +1,7 @@
 // Here lies client side JS 
+
+
+
 getNote();
 
 // Grab all values when 'save' is clicked!
