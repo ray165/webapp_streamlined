@@ -9,7 +9,7 @@ var docRef = db.collection("projects").doc(projID);
 docRef.get().then((doc) => {
     if (doc.exists) {
         console.log("Document data:", doc.data());
-        document.getElementById("projectName").innerHTML = doc.data().name;
+        document.getElementById("projectName").innerHTML = doc.data().pName;
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
