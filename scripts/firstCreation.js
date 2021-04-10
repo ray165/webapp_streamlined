@@ -22,7 +22,6 @@ function getProjectEdit() {
         console.log(pName, pDescription, pDueDate, pPriority, pProgress)
         writeProjectEdit(data);
         console.log("data sent to db!");
-
     })
 }
 
@@ -38,6 +37,7 @@ function writeProjectEdit(data) {
         querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data(), "testing:", doc.data().pName);
+            window.location.href = "projects.html";
         });
     });
 

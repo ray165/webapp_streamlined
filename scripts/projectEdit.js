@@ -76,6 +76,12 @@ function getProjectEdit() {
 function writeProjectEdit(data){
     docRef.update(data);
     console.log("Data successfully updated to DB!")
+
+    db.collection("projects").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            window.location.href = "projects.html";
+        });
+    });
 }
 
 
