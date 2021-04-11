@@ -21,7 +21,7 @@ docRef.get().then((doc) => {
 
 getTaskEdit();
 displayTasks();
-
+getCheckBoxInputs();
 
 function getTaskEdit() {
     document.getElementById("save").addEventListener('click', function () {
@@ -63,14 +63,15 @@ function writeTaskEdit(data) {
 
 
 // Generate tasks into html
-var counter = 0;
+// var counter = 0; // no longer needed
 function displayTasks() {
     docRef
     .collection("tasks")
     .get()
     .then((querySnapshot) => {
-      counter++; // counter to change the id formChecks for the checkboxes
+
       querySnapshot.forEach((doc) => {
+        console.log(doc.id + "this should be the task id");
         var task = document.createElement("li");
         task.className = "list-group-item" 
         task.innerHTML = "<strong>" + doc.data().tName + "</strong>";
@@ -80,10 +81,11 @@ function displayTasks() {
         input.className = "form-check-input";
         input.setAttribute("type", "checkbox");
         input.value = "";
-        input.id = "flexCheck" + counter;
+        input.id = doc.id;
+        input.checked = doc.data().status; // Display whether the checkbox should be done or not
         var label =  document.createElement("label");
         label.className = "form-check-label";
-        label.setAttribute("for", "flexCheck" + counter);
+        label.setAttribute("for", doc.id);
 
         var description = document.createElement("p");
         description.innerHTML = doc.data().description;
@@ -95,6 +97,27 @@ function displayTasks() {
       });
     });
 };
+
+
+// Click to save the task status into firebase. 
+function getCheckBoxInputs(){
+    document.getElementById("saveCheckBox").addEventListener('click', function(){
+        var boxes = document.querySelectorAll(".form-check-input");
+        console.log("btn clicked" + boxes)
+        Array.from(boxes).forEach(function(box) {
+            var dbLocation = docRef.collection("tasks").doc(box.id);
+            var data = {
+                "status": document.getElementById(box.id).checked
+            };
+            dbLocation.update(data);
+            console.log("checkboxes updated!");
+        });
+        // Force refresh page
+        // setTimeout(function(){
+        //     window.location.reload(1);
+        //  }, 0); 
+    });
+}
 
 
 /* <li class="list-group-item">
