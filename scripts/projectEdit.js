@@ -25,7 +25,7 @@ docRef.get().then((doc) => {
 // Autofill the html values with what's in the database! 
 // Query based on the project id.
 function autoFillValues(data){
-    document.getElementById("pName").value = data.name
+    document.getElementById("pName").value = data.pName
     document.getElementById("pDescription").value = data.description
     document.getElementById("pDueDate").value = data.dueDate
     document.getElementById("pPriority").value = data.priority
