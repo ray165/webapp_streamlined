@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/styles/skeleton.css"/>
-  <link rel="stylesheet" href="/styles/projectDetails.css"/>
+  <link rel="stylesheet" href="/styles/skeleton.css" />
+  <link rel="stylesheet" href="/styles/projectDetails.css" />
 
   <!-- Optional styles and scripts of your own -->
 </head>
@@ -24,38 +24,71 @@
   <!-- Header Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <div class="container-fluid">
-        <a class="navbar-brand" href="main.html">Streamlined</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <a class="navbar-brand" href="main.html">Streamlined</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
     </div>
   </nav>
 
-<div id="main">
+  <div id="main">
 
-  <div class="container d-flex justify-content-center align-items-center" id="top">
-    <h1 class="display-4 d-flex align-items-center" id="projectName">_</h1>
-    <a type="button" class="btn btn-success" id="pDetailsEdit" href="/projectEdit.html">Edit</a>
-  </div>
+    <div class="container d-flex justify-content-center align-items-center" id="top">
+      <h1 class="display-4 d-flex align-items-center" id="projectName">_</h1>
+      <a type="button" class="btn btn-success" id="pDetailsEdit" href="/projectEdit.html">Edit</a>
+    </div>
 
-  <!-- ************************* -->
-  <!-- TASK LIST -->
-  <!-- ************************* -->
-  <div class="d-flex justify-content-center align-items-center">
-    <div class="card float-end" style="width: 18rem">
-      <!-- <img src="..." class="card-img-top" alt="..." /> -->
-      <div class="card-body">
-        <h5 class="card-title">Tasks</h5>
-        <!-- <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p> -->
+    <!-- ************************* -->
+    <!-- Project Details -->
+    <!-- ************************* -->
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="card float-end" style="width: 60rem">
+        <div class="d-grid">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default" id="pDescription">
+          </div>
+          <div class="form-group row">
+            <div class="d-inline-block">
+              <span class="input-group-text" id="inputGroup-sizing-default">Due Date</span>
+              <input class="form-control" type="" value="2021-04-10" id="pDueDate">
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary" type="button">Priority</button>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" id="pPriority">
+        </div>
+
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary" type="button">Progress</button>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" id="pProgress">
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <!-- Unused hard coded task list ... for reference only -->
-        <!-- <li class="list-group-item">
+
+    </div>
+
+
+    <!-- ************************* -->
+    <!-- TASK LIST -->
+    <!-- ************************* -->
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="card float-end" style="width: 60rem">
+        <!-- <img src="..." class="card-img-top" alt="..." /> -->
+        <div class="card-body">
+          <h5 class="card-title">Tasks</h5>
+          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo">Add Tasks</button>
+        </div>
+        <ul class="list-group list-group-flush">
+          <!-- Unused hard coded task list ... for reference only -->
+          <!-- <li class="list-group-item">
           Task One
           <div class="form-check float-end">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -81,48 +114,48 @@
             </label>
           </div>
         </li> -->
-      </ul>
+        </ul>
 
-      <!-- ***************** -->
-      <!-- Modal Window for Tasks-->
-      <!-- ***************** -->
-      <div class="card-body">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-          data-bs-whatever="@mdo">Add Tasks</button>
-      </div>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form id="form" action="/" method="POST">
-                <div class="mb-3">
-                  <label for="tName" class="col-form-label">Task Name:</label>
-                  <input type="text" class="form-control" id="tName">
-                </div>
-                <div class="mb-3">
-                  <label for="tDescription" class="col-form-label" id="inputGroup-sizing-default">Description:</label>
-                  <textarea class="form-control" id="tDescription"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <a type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save">Save</a>
+        <!-- ***************** -->
+        <!-- Modal Window for Tasks-->
+        <!-- ***************** -->
+        <!-- <div class="card-body">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo">Add Tasks</button>
+        </div> -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="form" action="/" method="POST">
+                  <div class="mb-3">
+                    <label for="tName" class="col-form-label">Task Name:</label>
+                    <input type="text" class="form-control" id="tName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="tDescription" class="col-form-label" id="inputGroup-sizing-default">Description:</label>
+                    <textarea class="form-control" id="tDescription"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save">Save</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-  <!-- ************************* -->
-  <!-- Add Notes -->
-  <!-- ************************* -->
-  <!-- <div class="d-flex justify-content-center align-items-center">
+    <!-- ************************* -->
+    <!-- Add Notes -->
+    <!-- ************************* -->
+    <!-- <div class="d-flex justify-content-center align-items-center">
     <div class="input-group input-group-lg" style="width: 18rem;">
       <span class="input-group-text" id="inputGroup-sizing-lg">Add Notes</span>
       <input type="text" class="form-control" aria-label="Notes input box" id="newNote"
@@ -136,61 +169,62 @@
 
 
 
-  <!-- ************************* -->
-  <!-- Comments, Notes and History LIST -->
-  <!-- ************************* -->
-  <div class="d-flex justify-content-center align-items-center">
-    <div class="card float-end" style="width: 18rem">
-      <!-- <img src="..." class="card-img-top" alt="..." /> -->
-      <div class="card-body">
-        <div class='row'>
-          <div class='col-sm'>
-            <h5 class="card-title">Comments
-              <!-- <button>Hello</button> -->
-            </h5>
-          </div>
-          <div class="col-sm">
-            <!--*********************** -->
-            <!-- ADD COMMENTS MODAL -->
-            <!--*********************** -->
-            <div class="card-body" id="commentsCardBtn">
-              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                data-bs-target="#commentsModal" data-bs-whatever="@mdo" id="cBtn">Add New</button>
+    <!-- ************************* -->
+    <!-- Comments, Notes and History LIST -->
+    <!-- ************************* -->
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="card float-end" style="width: 60rem">
+        <!-- <img src="..." class="card-img-top" alt="..." /> -->
+        <div class="card-body">
+          <div class='row'>
+            <div class='col-sm'>
+              <h5 class="card-title">Comments
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#commentsModal" data-bs-whatever="@mdo" id="cBtn">Add New</button>
+              </h5>
             </div>
-            <div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="commentsModalLabel">New Comments</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form id="formComments" action="/" method="POST">
-                      <div class="mb-3">
-                        <label for="cName" class="col-form-label">Comments Author:</label>
-                        <input type="text" class="form-control" id="cName">
-                      </div>
-                      <div class="mb-3">
-                        <label for="cDescription" class="col-form-label"
-                          id="inputGroup-sizing-default">Description:</label>
-                        <textarea class="form-control" id="cDescription"></textarea>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a type="button" class="btn btn-primary" data-bs-dismiss="modal" id="saveComments">Save</a>
+            <div class="col-sm">
+              <!--*********************** -->
+              <!-- ADD COMMENTS MODAL -->
+              <!--*********************** -->
+              <!-- <div class="card-body" id="commentsCardBtn">
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#commentsModal" data-bs-whatever="@mdo" id="cBtn">Add New</button>
+              </div> -->
+              <div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="commentsModalLabel">New Comments</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="formComments" action="/" method="POST">
+                        <div class="mb-3">
+                          <label for="cName" class="col-form-label">Comments Author:</label>
+                          <input type="text" class="form-control" id="cName">
+                        </div>
+                        <div class="mb-3">
+                          <label for="cDescription" class="col-form-label"
+                            id="inputGroup-sizing-default">Description:</label>
+                          <textarea class="form-control" id="cDescription"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <a type="button" class="btn btn-primary" data-bs-dismiss="modal" id="saveComments">Save</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="accordion" id="accordionExample">
-        <!-- Unused sample accordions .. reference only. They are generated by JS. -->
-        <!-- <div class="accordion-item">
+        <div class="accordion" id="accordionExample">
+          <!-- Unused sample accordions .. reference only. They are generated by JS. -->
+          <!-- <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
@@ -232,11 +266,11 @@
             </div>
           </div>
         </div> -->
-      </div>
+        </div>
 
+      </div>
     </div>
   </div>
-</div>
   <!-- ***************************** -->
   <!-- bottom nav bar! -->
   <!-- ***************************** -->
