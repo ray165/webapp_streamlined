@@ -20,7 +20,7 @@ docRef.get().then((doc) => {
 
 
 getTaskEdit();
-
+displayTasks();
 
 
 function getTaskEdit() {
@@ -31,6 +31,7 @@ function getTaskEdit() {
         var data = {
             "tName": tName,
             "description": tDescription,
+            "status": false // for check box!
         }
 
         console.log(tName, tDescription,)
@@ -59,3 +60,48 @@ function writeTaskEdit(data) {
         });
     });
 }
+
+
+// Generate tasks into html
+var counter = 0;
+function displayTasks() {
+    docRef
+    .collection("tasks")
+    .get()
+    .then((querySnapshot) => {
+      counter++; // counter to change the id formChecks for the checkboxes
+      querySnapshot.forEach((doc) => {
+        var task = document.createElement("li");
+        task.className = "list-group-item" 
+        task.innerHTML = "<strong>" + doc.data().tName + "</strong>";
+        var checkContainer = document.createElement("div");
+        checkContainer.className = "form-check float-end";
+        var input = document.createElement("input");
+        input.className = "form-check-input";
+        input.setAttribute("type", "checkbox");
+        input.value = "";
+        input.id = "flexCheck" + counter;
+        var label =  document.createElement("label");
+        label.className = "form-check-label";
+        label.setAttribute("for", "flexCheck" + counter);
+
+        var description = document.createElement("p");
+        description.innerHTML = doc.data().description;
+
+        // Appends 
+        checkContainer.append(input, label);
+        task.append(checkContainer, description);
+        document.querySelector("#rootTasks").append(task); // Append each task to html
+      });
+    });
+};
+
+
+/* <li class="list-group-item">
+          Task One
+          <div class="form-check float-end">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+            </label>
+          </div>
+        </li> */

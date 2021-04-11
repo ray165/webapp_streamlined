@@ -1,4 +1,5 @@
 // Here lies client side JS 
+// const url = new URLSearchParams(window.location.search);
 // const projID = url.get("uid");
 var docRef = db.collection("projects").doc(projID);
 
