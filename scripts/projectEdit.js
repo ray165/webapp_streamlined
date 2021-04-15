@@ -33,23 +33,6 @@ function autoFillValues(data){
 };
 
 
-// Firestore data converter 
-// https://firebase.google.com/docs/firestore/query-data/get-data
-// var projConverter = {
-//     toFirestore: function(field){
-//         return {
-//             // supposedly these values already exist in the db        
-//             pName: field.pName,
-//             pDescription: field.description,
-//             pDueDate: field.dueDate,
-//             pPriority: field.priority,
-//             pProgress: field.progress,
-//         };
-//     },
-
-// };
-
-
 // Grab all values when 'save' is clicked!
 function getProjectEdit() {
     document.getElementById("save").addEventListener('click', function() {

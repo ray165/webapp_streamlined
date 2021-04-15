@@ -1,18 +1,8 @@
 // These constants shared with all other js files opened by the html.
 // url and projID defined in taskEdit.js
 
-// const url = new URLSearchParams(window.location.search);
-// const projID = url.get("uid");
-
-// const url = new URLSearchParams(window.location.search);
-// const projID = url.get("uid");
-
 var docRef = db.collection("projects").doc(projID);
 var counter = 0;
-
-
-
-
 
 setCommentsDB();
 
