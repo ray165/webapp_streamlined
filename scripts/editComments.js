@@ -3,9 +3,9 @@
 
 // const url = new URLSearchParams(window.location.search);
 // const projID = url.get("uid");
-console.log(projID);
 
-
+// const url = new URLSearchParams(window.location.search);
+// const projID = url.get("uid");
 
 var docRef = db.collection("projects").doc(projID);
 var counter = 0;
@@ -37,6 +37,9 @@ function setCommentsDB() {
       // Refresh every time u click save again.
       document.getElementById("cName").innerHTML = "";
       document.getElementById("cDescription").innerHTML = "";
+
+      //Refresh the page.
+      // location.reload();
     });
 }
 
@@ -95,7 +98,7 @@ docRef
 
       var collapse = document.createElement("div");
       collapse.id = "collapse" + counter;
-      collapse.className = "accordion-collapse collapse show";
+      collapse.className = "accordion-collapse collapse";
       collapse.setAttribute("aria-labelledby", "heading" + counter);
       collapse.setAttribute("data-bs-parent", "#accordionExample");
 
