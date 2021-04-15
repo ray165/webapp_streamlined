@@ -39,7 +39,12 @@ function setCommentsDB() {
       document.getElementById("cDescription").innerHTML = "";
 
       //Refresh the page.
-      // location.reload();
+      // db.collection("comments").get().then((querySnapshot) => {
+      //   querySnapshot.forEach((doc) => {
+      //       //console.log(doc.id, " => ", doc.data(), "testing:", doc.data().tName);
+      //       location.reload();
+      //   });
+      // });
     });
 }
 
@@ -55,6 +60,7 @@ function writeCommentsEdit(data) {
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         console.log(doc.id, " => ", doc.data(), "testing:", doc.data().cName);
+        // location.reload(); Doesnt work here!
       });
     });
 }
@@ -111,5 +117,6 @@ docRef
       collapse.append(body);
       item.append(h2, collapse);
       document.querySelector(".accordion").append(item);
+      
     });
   });

@@ -57,6 +57,7 @@ function writeTaskEdit(data) {
     db.collection("tasks").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             console.log(doc.id, " => ", doc.data(), "testing:", doc.data().tName);
+            location.reload();
         });
     });
 }
