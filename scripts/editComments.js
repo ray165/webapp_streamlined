@@ -28,13 +28,6 @@ function setCommentsDB() {
       document.getElementById("cName").innerHTML = "";
       document.getElementById("cDescription").innerHTML = "";
 
-      //Refresh the page.
-      // db.collection("comments").get().then((querySnapshot) => {
-      //   querySnapshot.forEach((doc) => {
-      //       //console.log(doc.id, " => ", doc.data(), "testing:", doc.data().tName);
-      //       location.reload();
-      //   });
-      // });
     });
 }
 
@@ -42,7 +35,7 @@ function writeCommentsEdit(data) {
   // Create a subcollection under the specified project
   var comments = docRef.collection("comments");
   // console.log(tasks);
-  comments.add(data);
+  comments.add(data).then(() => window.location.reload());
 
   // test by pulling from db.
   db.collection("comments")

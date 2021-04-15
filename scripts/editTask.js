@@ -51,15 +51,7 @@ function writeTaskEdit(data) {
     // Create a subcollection under the specified project 
     var tasks = docRef.collection("tasks")
     console.log(tasks);
-    tasks.add(data);
-
-
-    db.collection("tasks").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data(), "testing:", doc.data().tName);
-            location.reload();
-        });
-    });
+    tasks.add(data).then(() => window.location.reload());
 }
 
 
@@ -110,7 +102,7 @@ function getCheckBoxInputs(){
             var data = {
                 "status": document.getElementById(box.id).checked
             };
-            dbLocation.update(data);
+            dbLocation.update(data).then(() => window.location.reload());
             console.log("checkboxes updated!");
         });
         // Force refresh page
