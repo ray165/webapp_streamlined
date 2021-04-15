@@ -98,7 +98,7 @@ docRef
 
       var collapse = document.createElement("div");
       collapse.id = "collapse" + counter;
-      collapse.className = "accordion-collapse collapse show";
+      collapse.className = "accordion-collapse collapse";
       collapse.setAttribute("aria-labelledby", "heading" + counter);
       collapse.setAttribute("data-bs-parent", "#accordionExample");
 
