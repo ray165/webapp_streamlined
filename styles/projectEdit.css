@@ -1,6 +1,7 @@
 .card {
     margin: auto auto;
-    margin-top: 10vh;
-    height: 60vh;
+    margin-top: 8vh;
+    height: 70vh;
     max-width: 40rem;
+    max-height: 500px;
 }
