@@ -112,12 +112,3 @@ function getCheckBoxInputs(){
     });
 }
 
-
-/* <li class="list-group-item">
-          Task One
-          <div class="form-check float-end">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-            </label>
-          </div>
-        </li> */

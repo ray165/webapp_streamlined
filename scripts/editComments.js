@@ -54,11 +54,6 @@ docRef
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      // Type of doc.data() not defined yet!
-      // doc.data().name
-      // doc.data().time
-      // doc.data().comment
 
       counter++; // increment to differentiate the accordions.
 

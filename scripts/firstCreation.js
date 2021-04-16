@@ -43,10 +43,3 @@ function writeProjectEdit(data) {
 
 }
 
-
-// read data 
-
-
-// async function getProjectEdit(){
-
-// }

@@ -58,14 +58,3 @@ db.collection("projects").orderBy("dueDate", "asc").get().then((querySnapshot) =
     });
 });
 
-
-// When you click on the btn, it will send you to projectEdit.html
-// And, it will temporarily store the ID of the button (which is the project ID)
-// We need this so that we know which project we're editing
-// function sendClickedID(projID) {
-//     document.getElementById(projID).addEventListener('click', function() {
-
-//         alert("it worked!");
-        
-//     })
-// }

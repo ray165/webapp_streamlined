@@ -67,7 +67,3 @@ function writeProjectEdit(data){
     });
 }
 
-
-// async function getProjectEdit(){
-
-// }
