@@ -48,8 +48,7 @@ function getProjectEdit() {
             "description": pDescription,
             "priority": pPriority,
             "progress": pProgress}
-
-        console.log(pName, pDescription, pDueDate, pPriority, pProgress)     
+     
         writeProjectEdit(data);
         
     })
@@ -58,7 +57,6 @@ function getProjectEdit() {
 // Now write this data into our db. 
 function writeProjectEdit(data){
     docRef.update(data);
-    console.log("Data successfully updated to DB!")
 
     db.collection("projects").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
