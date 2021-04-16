@@ -65,3 +65,7 @@ It has the following subfolders and files:
 
 
 ```
+
+## References
+* https://www.shutterstock.com/image-photo/satisfied-work-done-happy-young-man-345950657
+* Icons from Power Point's free collection
